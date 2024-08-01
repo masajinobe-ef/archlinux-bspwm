@@ -1,0 +1,102 @@
+##---------- Keybindings ----------##
+
+# Terminal (kitty)
+alt + Return
+	alacritty
+
+# Open application menu
+alt + r
+	rofi -show combi -combi-modes "drun,ssh"
+
+# Open file manager
+alt + e
+  alacritty -e "yazi"
+
+# Wifi menu
+alt + u
+	bash $HOME/.local/bin/rofi-wifi-menu
+
+# Clipboard menu
+alt + v
+	rofi -modi "clipboard:greenclip print" -show clipboard
+
+# Power menu
+alt + p
+	rofi -show power-menu -modi "power-menu:$HOME/.local/bin/rofi-power-menu --choices=shutdown/suspend/reboot/logout"
+
+# Launch Apps
+alt + {w,t,d}
+	{chromium,telegram-desktop,discord}
+
+##---------- System Keys ----------##
+
+# Screenshots
+Print
+	bash $HOME/.local/bin/takeshot --save
+
+# Manage volume
+XF86AudioRaiseVolume
+  pactl set-sink-volume 0 +5%
+
+XF86AudioLowerVolume
+  pactl set-sink-volume 0 -5%
+
+XF86AudioMute
+  pactl set-sink-mute 0 toggle
+
+##---------- Bspwm ----------##
+
+# Reload sxhkd
+super + Escape
+	pkill -x sxhkd; sxhkd &
+
+# Quit/Restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Close & Kill app
+alt + {_,shift + }q
+	bspc node -{c,k}
+
+# Tiled or Fullscreen switch
+alt + s
+	bash $HOME/.local/bin/fullscreen
+
+# Preselect the ratio
+alt + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Split horizontal, vertical or cancel
+super + {apostrophe,semicolon,slash}
+	bspc node -p {east,south,cancel}
+
+# Send the window to another edge of the screen
+alt + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Switch workspace
+alt + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# Change focus to next window, including floating window
+alt + Tab
+	bspc node -f next.local
+
+# Change focus to prev window, including floating window
+Tab + shift
+	bspc node -f prev.local
+
+# Send focused window to another workspace
+alt + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+# Resize window
+alt + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0 || bspc node -z right -20 0, \
+				  bottom 0 20 || bspc node -z top 0 20, \
+				  top 0 -20 || bspc node -z bottom 0 -20, \
+				  right 20 0 || bspc node -z left 20 0}
+
+# Move floating window
+super + {h,j,k,l}
+	bspc node -v {-10 0,0 10,0 -10,10 0}

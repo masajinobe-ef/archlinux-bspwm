@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Some Apps...
+pgrep -x greenclip >/dev/null || greenclip daemon &
+pgrep -x telegram-desktop >/dev/null || telegram-desktop &

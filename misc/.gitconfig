@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[user]
+	email = priscilla.effects@gmail.com
+	name = masajinobe-ef
+[credential]
+	helper = store
+[core]
+	autocrlf = false

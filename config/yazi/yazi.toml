@@ -1,0 +1,60 @@
+[manager]
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_sensitive = true
+sort_reverse = false
+sort_dir_first = true
+sort_translit = true
+linemode = "size"
+show_hidden = true
+show_symlink = true
+
+[preview]
+tab_size = 2
+max_width = 1920
+max_height = 1080
+cache_dir = "~/.cache/yazi"
+image_filter = "triangle"
+image_quality = 50
+sixel_fraction = 10
+ueberzug_scale = 1
+ueberzug_offset = [0, 0, 0, 0]
+
+[opener]
+edit = [
+	{ run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true },
+]
+open = [
+	{ run = 'alacritty --working-directory="$(dirname "$1")"', desc = "Open" },
+]
+view = [
+  { run = 'feh --draw-filename --fullscreen --no-fehbg "$@"', desc = "Viewer" },
+]
+reveal = [
+	{ run = 'alacritty --working-directory="$(dirname "$1")"', desc = "Reveal" },
+]
+extract = [
+	{ run = 'unar "$1"', desc = "Extract here" },
+]
+play = [
+	{ run = 'mpv --force-window "$@"', orphan = true },
+]
+
+[open]
+rules = [
+	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+
+	{ mime = "text/*",          use = [ "edit", "reveal" ] },
+	{ mime = "image/*",         use = [ "view", "reveal" ] },
+	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	{ mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
+
+	{ mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
+
+	{ mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
+	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
+
+	{ name = "*", use = [ "open", "reveal" ] },
+]
+

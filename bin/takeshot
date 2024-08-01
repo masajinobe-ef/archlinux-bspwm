@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" == "--save" ]; then
+  timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+  save_dir="${XDG_PICTURES_DIR:-$HOME/Pictures}"
+  maim --select "$save_dir/Screenshots/screenshot_$timestamp.png"
+else
+  exit 1
+fi

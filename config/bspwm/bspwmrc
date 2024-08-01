@@ -1,0 +1,58 @@
+#!/bin/bash
+
+##---------- Start Environment ----------##
+
+# Keybindings Daemon
+pgrep -x sxhkd >/dev/null || sxhkd &
+
+# Picom Daemon
+pkill -x picom || picom --config ~/.config/picom/picom.conf &
+
+# Notification Daemon
+pkill -x dunst || dunst --config ~/.config/dunst/dunstrc &
+
+# PolKit Daemon
+pgrep -x "polkit-gnome-au" >/dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Wallpaper Daemon
+pkill -x feh || feh --recursive --bg-fill --no-fehbg --randomize ~/Wallpapers/* &
+
+# Autorun Programs
+bash ~/.local/bin/autorun
+
+# Polybar Daemon
+bash ~/.config/polybar/launch.sh --colorblocks
+
+##---------- Xorg Settings ----------##
+
+# Fix cursor and Set Keyboard Repeat Delay and Rate
+xsetroot -cursor_name left_ptr && xset r rate 200 50
+
+# Set Resolution
+xrandr --output DP-1 --mode 1920x1080 --rate 144
+
+##---------- BSPWM Window Rules ----------##
+
+bspc monitor -d 1 2 3 4 5 6
+
+bspc rule -a TelegramDesktop desktop=^6 private=on locked=on
+bspc rule -a discord desktop=^5 private=on locked=on follow=on
+bspc rule -a mpv desktop=^4
+bspc rule -a '*:*:Picture in picture' state=floating rectangle=640x360+1270+710 sticky=on
+
+##---------- BSPWM General Configuration ----------##
+
+bspc config border_width 5
+bspc config window_gap 10
+bspc config split_ratio 0.5
+
+bspc config normal_border_color "#000000"
+bspc config active_border_color "#a277ff"
+bspc config focused_border_color "#a277ff"
+bspc config presel_feedback_color "#a277ff"
+
+bspc config focus_follows_pointer true
+bspc config pointer_modifier true
+bspc config paddingless_monocle true
+bspc config borderless_monocle true
+bspc config gapless_monocle true
