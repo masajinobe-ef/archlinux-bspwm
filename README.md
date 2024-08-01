@@ -195,7 +195,7 @@ Section "InputClass"
 EndSection
 ```
 
-Config vconsole
+Config tty
 
 ```sh
 $ sudo nvim /etc/vconsole.conf
