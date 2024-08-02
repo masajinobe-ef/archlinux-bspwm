@@ -126,7 +126,8 @@ noto-fonts-emoji noto-fonts-cjk \
 
 # Software
 telegram-desktop qbittorrent chromium \
-obs-studio discord obsidian
+obs-studio discord obsidian kicad \
+--asdeps kicad-library kicad-library-3d
 ```
 
 #### Copy configuration files
