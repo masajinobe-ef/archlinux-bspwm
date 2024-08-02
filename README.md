@@ -122,7 +122,7 @@ p7zip zip unrar unzip unarchiver \
 
 # Fonts & Icons
 ttf-jetbrains-mono-nerd noto-fonts \
-noto-fonts-emoji noto-fonts-cjk flat-remix \
+noto-fonts-emoji noto-fonts-cjk \
 
 # Software
 telegram-desktop qbittorrent chromium \
