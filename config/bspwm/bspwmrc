@@ -18,10 +18,10 @@ pgrep -x "polkit-gnome-au" >/dev/null || /usr/lib/polkit-gnome/polkit-gnome-auth
 pkill -x feh || feh --recursive --bg-fill --no-fehbg --randomize ~/Wallpapers/* &
 
 # Autorun Programs
-bash ~/.local/bin/autorun
+sh ~/.local/bin/autorun
 
 # Polybar Daemon
-bash ~/.config/polybar/launch.sh --colorblocks
+sh ~/.config/polybar/launch.sh --colorblocks
 
 ##---------- Xorg Settings ----------##
 

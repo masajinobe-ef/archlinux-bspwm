@@ -14,7 +14,7 @@ alt + e
 
 # Wifi menu
 alt + u
-	bash $HOME/.local/bin/rofi-wifi-menu
+	sh $HOME/.local/bin/rofi-wifi-menu
 
 # Clipboard menu
 alt + v
@@ -32,7 +32,7 @@ alt + {w,t,d}
 
 # Screenshots
 Print
-	bash $HOME/.local/bin/takeshot --save
+	sh $HOME/.local/bin/takeshot --save
 
 # Manage volume
 XF86AudioRaiseVolume
@@ -60,7 +60,7 @@ alt + {_,shift + }q
 
 # Tiled or Fullscreen switch
 alt + s
-	bash $HOME/.local/bin/fullscreen
+	sh $HOME/.local/bin/fullscreen
 
 # Preselect the ratio
 alt + ctrl + {1-9}
