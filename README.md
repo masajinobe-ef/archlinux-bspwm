@@ -1,7 +1,7 @@
 # BSPWM
 
 <p align="center">
-  <img width="100%" src="preview.png" alt="preview"/>
+  <img width="100%" src="readme.png" alt="preview"/>
 </p>
 
 ## Description
