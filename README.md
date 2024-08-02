@@ -95,7 +95,7 @@ acpid cronie \
 networkmanager nm-connection-editor \
 
 # File manager
-xdg-user-dirs yazi \
+xdg-user-dirs yazi thunar tumbler lxappearance-gtk3 \
 ffmpegthumbnailer perl-image-exiftool ueberzugpp \
 polkit-gnome \
 
@@ -122,7 +122,7 @@ p7zip zip unrar unzip unarchiver \
 
 # Fonts & Icons
 ttf-jetbrains-mono-nerd noto-fonts \
-noto-fonts-emoji noto-fonts-cjk papirus-icon-theme \
+noto-fonts-emoji noto-fonts-cjk flat-remix \
 
 # Software
 telegram-desktop qbittorrent chromium \

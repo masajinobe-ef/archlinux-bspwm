@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>Alacritty</icon>
+	<name>Terminal</name>
+	<submenu></submenu>
+	<unique-id>1722184441770527-1</unique-id>
+	<command>/usr/bin/alacritty</command>
+	<description>Alacritty</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+</actions>
