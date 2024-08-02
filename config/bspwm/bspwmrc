@@ -6,16 +6,16 @@
 pgrep -x sxhkd >/dev/null || sxhkd &
 
 # Picom Daemon
-pkill -x picom || picom --config ~/.config/picom/picom.conf &
+pgrep -x picom >/dev/null || picom --config ~/.config/picom/picom.conf &
 
 # Notification Daemon
-pkill -x dunst || dunst --config ~/.config/dunst/dunstrc &
+pgrep -x dunst >/dev/null || dunst --config ~/.config/dunst/dunstrc &
 
 # PolKit Daemon
 pgrep -x "polkit-gnome-au" >/dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Wallpaper Daemon
-pkill -x feh || feh --recursive --bg-fill --no-fehbg --randomize ~/Wallpapers/* &
+pgrep -x feh >/dev/null || feh --recursive --bg-fill --no-fehbg --randomize ~/Wallpapers/* &
 
 # Autorun Programs
 sh ~/.local/bin/autorun
