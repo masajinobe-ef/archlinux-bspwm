@@ -109,7 +109,7 @@ mpv mpd mpc mpdris2 ncmpcpp \
 yt-dlp ffmpeg \
 fastfetch btop eza \
 fzf fd ripgrep \
-bat bat-extras \
+bat bat-extras rsync \
 maim xdotool xclip \
 zoxide aria2 calc hyperfine \
 xsel reflector jq man-db poppler \
