@@ -145,7 +145,7 @@ $ sudo chmod +x ~/.config/polybar/launch.sh
 $ sudo chmod +x ~/.local/bin/rofi-power-menu
 
 # Misc
-$ cp -r ~/archlinux-bspwm/misc/* ~
+$ cp -r ~/archlinux-bspwm/misc/* ~/
 ```
 
 #### Daemons
