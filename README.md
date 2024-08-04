@@ -88,7 +88,7 @@ picom \
 feh \
 
 # Drivers and etc. (AMD)
-mesa mesa-utils mesa-vdpau libva-mesa-driver \
+mesa mesa-utils mesa-vdpau libva-mesa-driver lib32-mesa \
 sof-firmware \
 bluez bluez-utils \
 acpid cronie \
@@ -111,21 +111,21 @@ fastfetch btop eza \
 fzf fd ripgrep \
 bat bat-extras \
 maim xdotool xclip \
-zoxide aria2 calc \
+zoxide aria2 calc hyperfine \
 xsel reflector jq man-db poppler \
 
 # Dev
 go rust nodejs npm yarn \
 
 # Archiver
-p7zip zip unrar unzip unarchiver \
+p7zip unrar \
 
 # Fonts & Icons
 ttf-jetbrains-mono-nerd noto-fonts \
-noto-fonts-emoji noto-fonts-cjk \
+noto-fonts-emoji noto-fonts-cjk ttf-cascadia-code \
 
 # Software
-telegram-desktop qbittorrent chromium \
+telegram-desktop qbittorrent chromium krita \
 obs-studio discord obsidian kicad \
 --asdeps kicad-library kicad-library-3d
 ```
