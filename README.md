@@ -103,7 +103,7 @@ polkit-gnome \
 neovim \
 
 # Media
-mpv mpd mpc mpdris2 ncmpcpp \
+mpv \
 
 # CLI
 yt-dlp ffmpeg \
