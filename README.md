@@ -61,7 +61,7 @@ Color
 Clone repo and updating submodules
 
 ```sh
-$ git clone --depth 1 --recurse-submodules https://github.com/masajinobe-ef/archlinux-bspwm
+$ git clone --depth=1 --recurse-submodules https://github.com/masajinobe-ef/archlinux-bspwm
 $ cd archlinux-bspwm && git submodule update --remote --merge
 ```
 
@@ -158,7 +158,6 @@ $ sudo systemctl enable bluetooth.service --now
 $ sudo systemctl enable sshd.service --now
 $ sudo systemctl enable reflector.timer
 $ sudo systemctl enable cronie.service --now
-$ systemctl enable mpd --now --user
 ```
 
 ---
