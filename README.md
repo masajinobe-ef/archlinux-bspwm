@@ -232,7 +232,7 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-Config tasks (cronie -e)
+Config tasks (crontab -e)
 
 Randomizing wallpapers by time with feh
 

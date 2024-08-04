@@ -59,6 +59,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR="nvim"
+export TERM="alacritty"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -85,7 +86,7 @@ alias mv="mv -v"
 alias rm="rm -rfv"
 alias untar="tar -xvf"
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias mirrors-update="reflector --protocol https --sort rate --latest 20 --country France,Germany,Finland,Russia,Netherlands,Latvia,Estonia,Norway --save /etc/pacman.d/mirrorlist"
+alias mirrors-update="sudo reflector --verbose --protocol https --sort rate --latest 20 --country France,Germany,Finland,Russia,Netherlands,Latvia,Estonia,Norway --save /etc/pacman.d/mirrorlist"
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
