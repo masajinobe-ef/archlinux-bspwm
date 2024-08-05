@@ -61,7 +61,7 @@ Color
 Clone repo and updating submodules
 
 ```sh
-$ git clone --depth 1 --recurse-submodules https://github.com/masajinobe-ef/archlinux-bspwm
+$ git clone --depth=1 --recurse-submodules https://github.com/masajinobe-ef/archlinux-bspwm
 $ cd archlinux-bspwm && git submodule update --remote --merge
 ```
 
@@ -103,7 +103,7 @@ polkit-gnome \
 neovim \
 
 # Media
-mpv mpd mpc mpdris2 ncmpcpp \
+mpv \
 
 # CLI
 yt-dlp ffmpeg \
@@ -145,7 +145,7 @@ $ sudo chmod +x ~/.config/polybar/launch.sh
 $ sudo chmod +x ~/.local/bin/rofi-power-menu
 
 # Misc
-$ cp -r ~/archlinux-bspwm/misc/* ~
+$ cp -r ~/archlinux-bspwm/misc/* ~/
 ```
 
 #### Daemons
@@ -158,7 +158,6 @@ $ sudo systemctl enable bluetooth.service --now
 $ sudo systemctl enable sshd.service --now
 $ sudo systemctl enable reflector.timer
 $ sudo systemctl enable cronie.service --now
-$ systemctl enable mpd --now --user
 ```
 
 ---
