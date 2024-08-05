@@ -28,6 +28,10 @@ alt + p
 alt + {w,t,d}
 	{chromium,telegram-desktop,discord}
 
+# Zoomer
+alt + z
+  exec ~/.local/bin/boomer
+
 ##---------- System Keys ----------##
 
 # Screenshots
