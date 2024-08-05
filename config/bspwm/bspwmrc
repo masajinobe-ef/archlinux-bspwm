@@ -26,7 +26,7 @@ sh ~/.config/polybar/launch.sh --colorblocks
 ##---------- Xorg Settings ----------##
 
 # Fix cursor and Set Keyboard Repeat Delay and Rate
-xsetroot -cursor_name left_ptr && xset r rate 200 50
+xsetroot -cursor_name left_ptr
 
 # Set Resolution
 xrandr --output DP-1 --mode 1920x1080 --rate 144

@@ -3,3 +3,4 @@
 # Some Apps...
 pgrep -x greenclip >/dev/null || greenclip daemon &
 pgrep -x telegram-desktop >/dev/null || telegram-desktop &
+xset r rate 200 50
