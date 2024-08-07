@@ -86,7 +86,7 @@ alias mv="mv -v"
 alias rm="rm -rfv"
 alias untar="tar -xvf"
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias mirrors-update="sudo reflector --verbose --protocol https --sort rate --latest 20 --country France,Germany,Finland,Russia,Netherlands,Latvia,Estonia,Norway --save /etc/pacman.d/mirrorlist"
+alias mirrors-update="sudo reflector --verbose --protocol https --age 12 --sort rate --latest 10 --country France,Germany,Finland,Russia,Netherlands --save /etc/pacman.d/mirrorlist"
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
