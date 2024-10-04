@@ -1,0 +1,16 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 14";
+
+    show-icons: true;
+    icon-theme: "Papirus";
+
+    window-format: "{w} {t}";
+    combi-display-format: "{text}";
+    drun-display-format: "{name}";
+
+    disable-history: true;
+    max-history-size: 5;
+
+    hover-select: false;
+}
+@theme "theme.rasi"

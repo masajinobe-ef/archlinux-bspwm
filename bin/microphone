@@ -1,0 +1,18 @@
+#!/bin/bash
+
+MUTE_STATE=$(pactl get-source-mute @DEFAULT_SOURCE@)
+MUTE_ON="yes"
+MIC_ICON="/usr/share/icons/Papirus-Dark/48x48/devices/audio-input-microphone.svg"
+SOUND_FILE="/usr/share/sounds/freedesktop/stereo/bell.oga"
+
+if [[ $MUTE_STATE == *"$MUTE_ON"* ]]; then
+    NEW_MUTE_STATE=0
+    MESSAGE="UNMUTED!"
+else
+    NEW_MUTE_STATE=1
+    MESSAGE="Muted..."
+fi
+
+pactl set-source-mute @DEFAULT_SOURCE@ $NEW_MUTE_STATE
+dunstify -u normal -i "$MIC_ICON" "$MESSAGE" -r 0
+paplay "$SOUND_FILE"

@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = main
+[user]
+	email = priscilla.effects@gmail.com
+	name = masajinobe-ef
+[credential]
+	helper = store
+[core]
+	autocrlf = false
+[format]
+	pretty = oneline
+[http]
+	postBuffer = 157286400
+	version = HTTP/2
+[safe]
+	directory = /opt/zapret

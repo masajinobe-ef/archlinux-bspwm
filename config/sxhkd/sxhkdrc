@@ -1,0 +1,129 @@
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║                      User Hotkeys                                    ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+# Launch Apps
+alt + {w}
+	{chromium}
+
+# Terminal
+alt + Return
+	alacritty
+
+# File manager (CLI)
+alt + e
+	alacritty -e "yazi"
+
+# File manager (GUI)
+alt + t
+	thunar
+
+# Music player
+alt + m
+	alacritty -e "ncmpcpp"
+
+# Launcher menu
+alt + r
+	rofi -show combi -combi-modes "drun,ssh"
+
+# Zoomer
+alt + z
+	exec ~/.local/bin/boomer
+
+# Clipboard menu
+super + v
+	rofi -modi "clipboard:greenclip print" -show clipboard
+
+# Power menu
+super + p
+	rofi -show power-menu -modi "power-menu:$HOME/.local/bin/rofi-power-menu --choices=shutdown/suspend/reboot/logout"
+
+# Wifi menu
+super + u
+	sh ~/.local/bin/rofi-wifi-menu &
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║                      System Keys                                     ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+# Music control
+alt + F9
+	sh ~/.local/bin/mpc-control --toggle &
+
+alt + F11
+	sh ~/.local/bin/mpc-control --up &
+
+alt + F10
+	sh ~/.local/bin/mpc-control --down &
+
+ctrl + F11
+	sh ~/.local/bin/mpc-control --next &
+
+ctrl + F10
+	sh ~/.local/bin/mpc-control --prev &
+
+# Tiled or Fullscreen switch
+alt + s
+	sh ~/.local/bin/fullscreen &
+
+# Screenshots
+Print
+	sh ~/.local/bin/screenshot --save &
+
+# Mic mute
+alt + grave
+	sh ~/.local/bin/microphone &
+
+# Manage volume
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +5%
+
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -5%
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║                      BSPWM Hotkeys                                   ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+# Reload sxhkd
+super + Escape
+	pkill -x sxhkd; sxhkd &
+
+# Quit/Restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Close & Kill app
+alt + {_,shift + }q
+	bspc node -{c,k}
+
+# Split horizontal, vertical or cancel
+alt + {apostrophe,semicolon,slash}
+	bspc node -p {east,south,cancel}
+
+# Send the window to another edge of the screen
+alt + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Switch workspace
+alt + Tab
+    bspc desktop -f next.local
+
+# Send focused window to another workspace and switch workspace
+alt + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+# Resize window
+ctrl + {h,j,k,l}
+	bspc node -z {left -20 0 || bspc node -z right -20 0, \
+				  bottom 0 20 || bspc node -z top 0 20, \
+				  top 0 -20 || bspc node -z bottom 0 -20, \
+				  right 20 0 || bspc node -z left 20 0}
+
+# Move floating window
+super + {h,j,k,l}
+	bspc node -v {-10 0,0 10,0 -10,10 0}
+

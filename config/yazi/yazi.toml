@@ -1,0 +1,80 @@
+[manager]
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_sensitive = true
+sort_reverse = false
+sort_dir_first = true
+sort_translit = true
+linemode = "size"
+show_hidden = true
+show_symlink = true
+
+
+[preview]
+tab_size = 2
+max_width = 640
+max_height = 480
+cache_dir = "~/.cache/yazi"
+image_filter = "triangle"
+image_quality = 50
+sixel_fraction = 10
+ueberzug_scale = 1
+ueberzug_offset = [0, 0, 0, 0]
+
+
+[opener]
+edit_nvim = [
+    { run = '${EDITOR:=nvim} "$@"', desc = "Edit with Neovim", block = true },
+]
+
+reader = [
+    { run = 'xreader "$@"', desc = "Open with Xreader", block = true },
+]
+
+play = [
+    { run = 'mpv --force-window "$@"', desc = "Play with mpv", orphan = true },
+]
+
+view = [
+    { run = 'feh --draw-filename --fullscreen --no-fehbg "$@"', desc = "View with feh", block = true },
+]
+
+reveal = [
+    { run = 'alacritty --working-directory="$(dirname "$1")" &', desc ="Reveal", orphan = true },
+]
+
+archive_zip = [
+    { run = 'zip -r "${1%.zip}.zip" "$@"', desc = "Archive with zip", block = true },
+]
+
+extract_zip = [
+    { run = 'unzip "$1" -d "${1%.*}"', desc = "Extract zip", block = true },
+]
+
+archive_7z = [
+    { run = '7z a "${1%.7z}.7z" "$@"', desc = "Archive with 7z", block = true },
+]
+
+extract_7z = [
+    { run = '7z x "$1" -o"${1%.*}"', desc = "Extract 7z", block = true },
+]
+
+[open]
+rules = [
+    { name = "*/", use = [ "edit_nvim", "reveal", "archive_zip", "archive_7z" ] },
+
+    { mime = "text/*",          use = [ "edit_nvim", "reveal", "archive_zip", "archive_7z" ] },
+    { mime = "inode/x-empty",   use = [ "edit_nvim", "reveal", "archive_zip", "archive_7z" ] },
+    { mime = "application/json", use = [ "edit_nvim", "reveal", "archive_zip", "archive_7z" ] },
+
+    { mime = "image/*",         use = [ "view", "reveal", "archive_zip", "archive_7z" ] },
+    { mime = "{audio,video}/*", use = [ "play", "reveal", "archive_zip", "archive_7z" ] },
+
+    { mime = "application/pdf", use = [ "reader", "reveal", "archive_zip", "archive_7z" ] },
+
+    { mime = "application/zip", use = [ "extract_zip", "reveal"] },
+    { mime = "application/x-7z-compressed", use = [ "extract_7z", "reveal"] },
+
+    { name = "*", use = [ "edit_nvim", "reveal", "archive_zip", "archive_7z", "extract_zip" ] },
+]
+

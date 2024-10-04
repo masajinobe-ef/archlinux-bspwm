@@ -1,0 +1,51 @@
+#!/bin/bash
+
+HOST="mpdsecret@127.0.0.1"
+PORT="660160"
+
+increase_volume() {
+    current_volume=$(mpc --host $HOST --port $PORT volume | grep -o '[0-9]*')
+    new_volume=$((current_volume + 5))
+    [[ $new_volume -gt 100 ]] && new_volume=100
+    mpc --host $HOST --port $PORT volume $new_volume
+}
+
+decrease_volume() {
+    current_volume=$(mpc --host $HOST --port $PORT volume | grep -o '[0-9]*')
+    new_volume=$((current_volume - 5))
+    [[ $new_volume -lt 0 ]] && new_volume=0
+    mpc --host $HOST --port $PORT volume $new_volume
+}
+
+toggle() {
+    mpc --host $HOST --port $PORT toggle
+}
+
+next_track() {
+    mpc --host $HOST --port $PORT next
+}
+
+previous_track() {
+    mpc --host $HOST --port $PORT prev
+}
+
+case "$1" in
+--up)
+    increase_volume
+    ;;
+--down)
+    decrease_volume
+    ;;
+--toggle)
+    toggle
+    ;;
+--next)
+    next_track
+    ;;
+--prev)
+    previous_track
+    ;;
+*)
+    echo "Use: $0 --up|--down|--toggle|--next|--prev"
+    ;;
+esac

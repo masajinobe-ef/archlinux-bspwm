@@ -1,0 +1,11 @@
+#!/bin/bash
+
+active_win_id=$(xdotool getactivewindow)
+current_state=$(bspc query -T -n "$active_win_id" | jq -r '.client.state')
+
+new_state="tiled"
+if [[ "$current_state" == "tiled" ]]; then
+    new_state="fullscreen"
+fi
+
+bspc node "$active_win_id" -t "$new_state"

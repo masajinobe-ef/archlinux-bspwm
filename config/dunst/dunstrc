@@ -1,0 +1,98 @@
+[global]
+### Display ###
+monitor = 0
+follow = mouse
+
+### Geometry ###
+width = (0, 360)
+height = 360
+origin = top-right
+offset = 5x45
+scale = 0
+notification_limit = 5
+
+### Progress bar ###
+progress_bar = true
+progress_bar_height = 10
+progress_bar_frame_width = 1
+progress_bar_min_width = 150
+progress_bar_max_width = 300
+progress_bar_corner_radius = 0
+icon_corner_radius = 0
+indicate_hidden = yes
+transparency = 0
+separator_height = 5
+padding = 15
+horizontal_padding = 15
+text_icon_padding = 0
+frame_width = 0
+frame_color = "#FFFFFF"
+gap_size = 0
+separator_color = frame
+sort = yes
+
+### Text ###
+font = JetbrainsMono Nerd Font 12
+line_height = 0
+markup = full
+format = "<b>%s</b>\n%b"
+alignment = center
+vertical_alignment = center
+show_age_threshold = 60
+ellipsize = middle
+ignore_newline = yes
+stack_duplicates = false
+hide_duplicate_count = false
+show_indicators = no
+
+### Icons ###
+enable_recursive_icon_lookup = true
+icon_position = right
+min_icon_size = 32
+max_icon_size = 96
+icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/apps
+
+### History ###
+sticky_history = yes
+history_length = 20
+
+### Misc/Advanced ###
+dmenu = /usr/bin/rofi
+browser = /usr/bin/chromium
+always_run_script = true
+title = Dunst
+class = Dunst
+corner_radius = 12
+ignore_dbusclose = false
+
+### Wayland ###
+force_xwayland = false
+
+### Legacy ###
+force_xinerama = false
+
+### Mouse ###
+mouse_left_click = close_current
+mouse_middle_click = do_action, close_current
+mouse_right_click = close_all
+
+[experimental]
+per_monitor_dpi = false
+
+[urgency_low]
+background = "#FFFFFF"
+foreground = "#000000"
+highlight  = "#000000"
+timeout = 5
+
+[urgency_normal]
+background = "#FFFFFF"
+foreground = "#000000"
+highlight  = "#000000"
+timeout = 5
+
+[urgency_critical]
+background = "#FFFFFF"
+foreground = "#000000"
+highlight  = "#000000"
+timeout = 10

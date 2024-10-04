@@ -1,0 +1,12 @@
+config/pypoetry/pyproject.toml
+
+config/mpd/mpd.db
+config/mpd/mpd.state
+config/mpd/syslog
+config/mpd/playlists/*
+
+config/xfce4/help.rc
+
+config/ncmpcpp/error.log
+config/ncmpcpp/lyrics/*
+

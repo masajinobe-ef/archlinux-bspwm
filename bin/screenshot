@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ "$1" == "--save" ]]; then
+  timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+  save_dir="${XDG_PICTURES_DIR:-$HOME/Pictures}/Screenshots"
+  mkdir -p "$save_dir"
+  maim --select "$save_dir/screenshot_$timestamp.png"
+
+  SCREENSHOT_ICON="/usr/share/icons/Papirus-Dark/48x48/apps/gnome-screenshot.svg"
+  MESSAGE="Screenshot saved as screenshot_$timestamp.png"
+  dunstify -u normal -i "$SCREENSHOT_ICON" "$MESSAGE" -r 0
+else
+  exit 1
+fi
