@@ -127,12 +127,12 @@ alias mirror-update="sudo reflector --verbose --protocol https --age 12 --sort r
 # ╚══════════════════════════════════════════════════════════════════════╝
 
 function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
 }
 
 # ╔══════════════════════════════════════════════════════════════════════╗
@@ -174,4 +174,3 @@ eval "$(zoxide init zsh)"
 # ║                      Autorun                                         ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 
-clear
