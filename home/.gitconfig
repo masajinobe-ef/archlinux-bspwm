@@ -14,3 +14,5 @@
 	version = HTTP/2
 [safe]
 	directory = /opt/zapret
+[pull]
+	rebase = false
