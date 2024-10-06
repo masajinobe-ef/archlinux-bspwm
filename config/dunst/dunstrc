@@ -7,7 +7,7 @@ follow = mouse
 width = (0, 360)
 height = 360
 origin = top-right
-offset = 5x45
+offset = 3x40
 scale = 0
 notification_limit = 5
 
@@ -62,7 +62,7 @@ browser = /usr/bin/chromium
 always_run_script = true
 title = Dunst
 class = Dunst
-corner_radius = 12
+corner_radius = 0
 ignore_dbusclose = false
 
 ### Wayland ###
