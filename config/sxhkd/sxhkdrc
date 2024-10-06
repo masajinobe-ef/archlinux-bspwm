@@ -67,8 +67,11 @@ alt + s
 	sh ~/.local/bin/fullscreen &
 
 # Screenshots
-Print
+shift + Print
 	sh ~/.local/bin/screenshot --save &
+
+Print
+	sh ~/.local/bin/screenshot --clipboard &
 
 # Mic mute
 alt + grave

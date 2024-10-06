@@ -7,10 +7,14 @@ if [[ "$1" == "--save" ]]; then
 
     maim --select "$save_dir/screenshot_$timestamp.png"
 
-    if [[ $? -eq 0 ]]; then
-        SCREENSHOT_ICON="/usr/share/icons/Papirus-Dark/48x48/apps/gnome-screenshot.svg"
-        MESSAGE="Screenshot saved as screenshot_$timestamp.png"
-        dunstify -u normal -i "$SCREENSHOT_ICON" "$MESSAGE" -r 0
+    if [[ $? -ne 0 ]]; then
+        exit 1
+    fi
+
+elif [[ "$1" == "--clipboard" ]]; then
+    maim --select | xclip -selection clipboard -t image/png
+    if [[ $? -ne 0 ]]; then
+        exit 1
     fi
 else
     exit 1
