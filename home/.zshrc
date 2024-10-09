@@ -78,6 +78,7 @@ export ARCHFLAGS="-arch x86_64"
 export RUST_BACKTRACE=1
 
 export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"
 
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║                             Aliases                                  ║
@@ -177,4 +178,3 @@ eval "$(zoxide init zsh)"
 # ╚══════════════════════════════════════════════════════════════════════╝
 
 
-. "$HOME/.cargo/env"
