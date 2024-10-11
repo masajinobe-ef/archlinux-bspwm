@@ -102,6 +102,10 @@ alias grep="rg"
 # Notifications and Dunst Management
 alias dun='killall dunst && dunst & notify-send "cool1" "yeah it is working" && notify-send "cool2" "yeah it is working"'
 
+# IP
+alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | cut -d/ -f1"
+alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
+
 # Terminal Management
 alias cls="clear"
 
