@@ -120,8 +120,12 @@ alias cp="cp -vr"
 alias mkdir="mkdir -p"
 
 # Archiving
-alias utar="tar -zxvf"
-alias mtar="tar -zcvf"
+alias tgz='tar -cvvzf'
+alias tbz2='tar -cvvjf'
+alias utgz='tar -xvvzf'
+alias utbz2='tar -xvvjf'
+alias mktar='tar -cvvf'
+alias untar='tar -xvvf'
 alias zz='zip -r'
 alias uz='unzip'
 
