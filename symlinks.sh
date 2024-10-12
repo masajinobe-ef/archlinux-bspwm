@@ -147,5 +147,7 @@ stow_directory "$HOME_DIR" "$TARGET_HOME"
 echo -e "${GREEN}All directories stowed successfully.${NC}"
 log_message "All directories stowed successfully."
 
+notify-send "Symlinks Script" "Symlinks have been created successfully."
+
 echo "Press Enter to exit..."
 read
