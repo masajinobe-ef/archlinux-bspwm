@@ -47,17 +47,9 @@ git_operations() {
     git add .
     if ! git diff-index --quiet HEAD --; then
         git commit -m "Update configurations: $(date '+%Y-%m-%d %H:%M:%S')" || exit_with_error "Could not commit changes"
-        echo -e "${GREEN}Do you want to push the changes? (y/n)${NC}"
-        read -r push_answer
-
-        if [[ "$push_answer" == "y" ]]; then
-            git push origin "$BRANCH" || exit_with_error "Could not push changes"
-            echo -e "${GREEN}Changes successfully pushed to the remote repository.${NC}"
-            log_message "Changes successfully pushed to the remote repository."
-        else
-            echo -e "${GREEN}Push aborted by user.${NC}"
-            log_message "Push aborted by user."
-        fi
+        git push origin "$BRANCH" || exit_with_error "Could not push changes"
+        echo -e "${GREEN}Changes successfully pushed to the remote repository.${NC}"
+        log_message "Changes successfully pushed to the remote repository."
     else
         echo -e "${BLUE}No changes to commit or push.${NC}"
         log_message "No changes to commit or push."

@@ -46,6 +46,10 @@ super + u
 # ║                      System Keys                                     ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 
+# Access (sing-box)
+alt + F12
+	alacritty -e sudo sing-box run -c .access_config.json
+
 # Music control
 alt + F9
 	sh ~/.local/bin/mpc-control --toggle &
