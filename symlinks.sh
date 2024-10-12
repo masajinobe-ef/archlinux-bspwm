@@ -173,20 +173,31 @@ stow_directory() {
             exit_with_error "Error stowing $dir to $target" "$error_details"
         fi
     else
-        echo -e "${RED}Warning: Directory not found or empty: $dir${NC}"
-        log_message "Warning: Directory not found or empty: $dir"
+        exit_with_error "Directory not found or empty: $dir"
     fi
 }
 
-# Stow all directories to their respective targets
+# Stow all directories to their respective targets, exit if any directory is missing
+if [ ! -d "$BIN_DIR" ] || [ ! -d "$CONFIG_DIR" ] || [ ! -d "$HOME_DIR" ]; then
+    exit_with_error "One or more required directories (bin, config, home) do not exist."
+fi
+
+# Perform stowing
 stow_directory "$BIN_DIR" "$TARGET_BIN"
 stow_directory "$CONFIG_DIR" "$TARGET_CONFIG"
 stow_directory "$HOME_DIR" "$TARGET_HOME"
 
-echo -e "${GREEN}Stowing completed with warnings.${NC}"
-log_message "Stowing completed with warnings."
+# Perform stowing
+stow_directory "$BIN_DIR" "$TARGET_BIN"
+stow_directory "$CONFIG_DIR" "$TARGET_CONFIG"
+stow_directory "$HOME_DIR" "$TARGET_HOME"
 
-notify-send "Symlinks Script" "Symlinks have been created with some warnings."
+# If all directories were stowed successfully, log and notify
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}All directories stowed successfully.${NC}"
+    log_message "All directories stowed successfully."
+    notify-send "Symlinks Script" "Symlinks have been created successfully."
+fi
 
 echo "Press Enter to exit..."
 read
