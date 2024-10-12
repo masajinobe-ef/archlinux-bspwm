@@ -187,11 +187,6 @@ stow_directory "$BIN_DIR" "$TARGET_BIN"
 stow_directory "$CONFIG_DIR" "$TARGET_CONFIG"
 stow_directory "$HOME_DIR" "$TARGET_HOME"
 
-# Perform stowing
-stow_directory "$BIN_DIR" "$TARGET_BIN"
-stow_directory "$CONFIG_DIR" "$TARGET_CONFIG"
-stow_directory "$HOME_DIR" "$TARGET_HOME"
-
 # If all directories were stowed successfully, log and notify
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}All directories stowed successfully.${NC}"
