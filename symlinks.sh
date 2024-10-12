@@ -122,7 +122,7 @@ stow_directory() {
         fi
     fi
 
-    if [ -d "$dir" ]; then
+    if [ -d "$dir" ] && [ "$(ls -A "$dir")" ]; then
         echo -e "${BLUE}Stowing $dir to $target...${NC}"
 
         local package_name=$(basename "$dir")
@@ -173,7 +173,8 @@ stow_directory() {
             exit_with_error "Error stowing $dir to $target" "$error_details"
         fi
     else
-        log_message "Warning: Directory not found: $dir"
+        echo -e "${RED}Warning: Directory not found or empty: $dir${NC}"
+        log_message "Warning: Directory not found or empty: $dir"
     fi
 }
 
@@ -182,10 +183,10 @@ stow_directory "$BIN_DIR" "$TARGET_BIN"
 stow_directory "$CONFIG_DIR" "$TARGET_CONFIG"
 stow_directory "$HOME_DIR" "$TARGET_HOME"
 
-echo -e "${GREEN}All directories stowed successfully.${NC}"
-log_message "All directories stowed successfully."
+echo -e "${GREEN}Stowing completed with warnings.${NC}"
+log_message "Stowing completed with warnings."
 
-notify-send "Symlinks Script" "Symlinks have been created successfully."
+notify-send "Symlinks Script" "Symlinks have been created with some warnings."
 
 echo "Press Enter to exit..."
 read
