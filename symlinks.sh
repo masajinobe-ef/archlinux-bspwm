@@ -41,6 +41,13 @@ exit_with_error() {
 git_operations() {
     cd "$DOTFILES_DIR" || exit_with_error "Could not change to directory $DOTFILES_DIR"
 
+    # Check if the directory is a Git repository
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        log_message "Not a Git repository: $DOTFILES_DIR"
+        echo -e "${RED}Error: $DOTFILES_DIR is not a Git repository.${NC}"
+        return
+    fi
+
     # Fetch and compare with the remote branch
     git fetch
     if ! git diff --quiet HEAD origin/"$BRANCH"; then
@@ -182,4 +189,3 @@ notify-send "Symlinks Script" "Symlinks have been created successfully."
 
 echo "Press Enter to exit..."
 read
-
