@@ -72,7 +72,6 @@ export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 export TERM="xterm-256color"
 export BROWSER="chromium"
-export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export RUST_BACKTRACE=1
@@ -98,6 +97,9 @@ alias lg="lazygit"
 alias b="bat"
 alias cat="bat"
 alias grep="rg"
+
+# Package Manager
+alias orph="paru -Rns $(paru -Qdtq)"
 
 # Notifications and Dunst Management
 alias dun='killall dunst && dunst & notify-send "cool1" "yeah it is working" && notify-send "cool2" "yeah it is working"'
