@@ -99,7 +99,7 @@ alias cat="bat"
 alias grep="rg"
 
 # Package Manager
-alias orph="paru -Rns $(paru -Qdtq)"
+alias orph="pacman -Rns $(pacman -Qdtq)"
 
 # Notifications and Dunst Management
 alias dun='killall dunst && dunst & notify-send "cool1" "yeah it is working" && notify-send "cool2" "yeah it is working"'
