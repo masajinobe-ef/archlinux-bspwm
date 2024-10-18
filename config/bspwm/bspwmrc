@@ -7,7 +7,7 @@
 bspc monitor -d 1 2 3 4 5 6
 
 bspc rule -a TelegramDesktop desktop=^5 private=on locked=on
-bspc rule -a Chromium desktop=^4 private=on locked=on
+bspc rule -a Chromium desktop=^4
 bspc rule -a mpv sticky=on
 bspc rule -a '*:*:Picture in picture' state=floating sticky=on border=off rectangle=640x360+1280+720
 
@@ -16,25 +16,25 @@ bspc rule -a '*:*:Picture in picture' state=floating sticky=on border=off rectan
 # ╚══════════════════════════════════════════════════════════════════════╝
 
 # Hotkey Daemon
-pgrep -x sxhkd >/dev/null || sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Polybar Daemon
 sh ~/.config/polybar/launch.sh --colorblocks &
 
 # Compositor Daemon
-pgrep -x picom >/dev/null || picom --config ~/.config/picom/picom.conf &
+pgrep -x picom > /dev/null || picom --config ~/.config/picom/picom.conf &
 
 # Notify Daemon
-pgrep -x dunst >/dev/null || dunst --config ~/.config/dunst/dunstrc &
+pgrep -x dunst > /dev/null || dunst --config ~/.config/dunst/dunstrc &
 
 # Clipboard Daemon
-pgrep -x greenclip >/dev/null || greenclip daemon &
+pgrep -x greenclip > /dev/null || greenclip daemon &
 
 # Polkit Daemon
-pgrep -x "polkit-gnome-au" >/dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+pgrep -x "polkit-gnome-au" > /dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Wallpaper Daemon
-pgrep -x feh >/dev/null || feh --recursive --bg-fill --no-fehbg --randomize ~/Wallpapers/* &
+pgrep -x feh > /dev/null || feh --recursive --bg-fill --no-fehbg --randomize ~/Wallpapers/* &
 
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║                       Xorg Settings                                  ║

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-pgrep -x telegram-desktop >/dev/null || telegram-desktop &
-pgrep -x udiskie >/dev/null || udiskie --no-automount --tray &
+pgrep -x telegram-desktop > /dev/null || telegram-desktop &
+pgrep -x udiskie > /dev/null || udiskie --no-automount --tray &
