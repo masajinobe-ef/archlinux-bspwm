@@ -1,21 +1,29 @@
 #!/bin/bash
 
+if [[ $# -eq 0 ]]; then
+    echo "Usage: $0 --save | --clipboard"
+    exit 1
+fi
+
 if [[ "$1" == "--save" ]]; then
     timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
     save_dir="${XDG_PICTURES_DIR:-$HOME/Pictures}/Screenshots"
     mkdir -p "$save_dir"
 
-    maim --select "$save_dir/screenshot_$timestamp.png"
+    maim -s "$save_dir/s_$timestamp.png"
 
     if [[ $? -ne 0 ]]; then
+        echo "Error: Failed to take screenshot and save it."
         exit 1
     fi
 
 elif [[ "$1" == "--clipboard" ]]; then
-    maim --select | xclip -selection clipboard -t image/png
+    maim -s | xclip -selection clipboard -t image/png -i
     if [[ $? -ne 0 ]]; then
+        echo "Error: Failed to take screenshot and copy it to clipboard."
         exit 1
     fi
 else
+    echo "Error: Invalid option. Use --save or --clipboard."
     exit 1
 fi

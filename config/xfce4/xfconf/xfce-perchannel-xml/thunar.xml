@@ -11,7 +11,7 @@
   <property name="misc-exec-shell-scripts-by-default" type="bool" value="false"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,50,147,50,50,143,50,50,258,50,50,80,50,143"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,147,138,98,575,50,50,730,50,50,98,50,611"/>
   <property name="last-side-pane" type="string" value="ThunarTreePane"/>
   <property name="last-image-preview-visible" type="bool" value="true"/>
   <property name="last-toolbar-item-order" type="string" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"/>

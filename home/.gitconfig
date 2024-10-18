@@ -16,3 +16,5 @@
 	directory = /opt/zapret
 [pull]
 	rebase = false
+[color]
+	ui = auto

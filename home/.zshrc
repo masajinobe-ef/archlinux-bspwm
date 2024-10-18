@@ -76,12 +76,18 @@ export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export RUST_BACKTRACE=1
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export ANDROID_HOME=/opt/android-sdk
+export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+export PATH="$HOME/.cargo/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH"
+
 . "$HOME/.cargo/env"
 
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║                             Aliases                                  ║
 # ╚══════════════════════════════════════════════════════════════════════╝
+
+# Zsh config restart
+alias zc="source ~/.zshrc"
 
 # Editors
 alias n="nvim"
