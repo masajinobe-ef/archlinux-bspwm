@@ -77,7 +77,7 @@ export ARCHFLAGS="-arch x86_64"
 export RUST_BACKTRACE=1
 
 export ANDROID_HOME=/opt/android-sdk
-export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH="$HOME/.cargo/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH"
 
 . "$HOME/.cargo/env"
