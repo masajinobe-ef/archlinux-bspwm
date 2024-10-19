@@ -10,6 +10,7 @@ bspc rule -a TelegramDesktop desktop=^5 private=on locked=on
 bspc rule -a Chromium desktop=^4
 bspc rule -a mpv sticky=on
 bspc rule -a '*:*:Picture in picture' state=floating sticky=on border=off rectangle=640x360+1280+720
+bspc rule -a MEGAsync state=floating
 
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║                     Start Environment                                ║
