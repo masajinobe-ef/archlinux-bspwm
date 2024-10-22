@@ -1,6 +1,14 @@
 #!/bin/zsh
 
 # ╔══════════════════════════════════════════════════════════════════════╗
+# ║                     Tmux                                             ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_AUTOCONNECT=true
+
+# ╔══════════════════════════════════════════════════════════════════════╗
 # ║                     Powerlevel10k Instant Prompt                     ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 
@@ -54,6 +62,7 @@ HIST_STAMPS="dd/mm/yyyy"
 
 plugins=(
   git
+  tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
@@ -70,24 +79,18 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 export BROWSER="chromium"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export RUST_BACKTRACE=1
 
-export ANDROID_HOME=/opt/android-sdk
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-export PATH="$HOME/.cargo/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH"
-
+export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
 
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║                             Aliases                                  ║
 # ╚══════════════════════════════════════════════════════════════════════╝
-
-# Zsh config restart
-alias zc="source ~/.zshrc"
 
 # Editors
 alias n="nvim"
