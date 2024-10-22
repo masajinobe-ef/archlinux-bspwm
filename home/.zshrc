@@ -4,9 +4,9 @@
 # ║                     Tmux                                             ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_FIXTERM=true
-ZSH_TMUX_AUTOCONNECT=false
+ZSH_TMUX_AUTOCONNECT=true
 
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║                     Powerlevel10k Instant Prompt                     ║
