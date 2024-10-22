@@ -10,14 +10,6 @@ alt + {w}
 alt + Return
 	alacritty
 
-# File manager (CLI)
-alt + e
-	alacritty -e "yazi"
-
-# File manager (GUI)
-alt + t
-	thunar
-
 # Music player
 alt + m
 	alacritty -e "ncmpcpp"

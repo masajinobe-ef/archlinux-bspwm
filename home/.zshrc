@@ -5,8 +5,8 @@
 # ╚══════════════════════════════════════════════════════════════════════╝
 
 ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_FIXTERM=true
+ZSH_TMUX_AUTOCONNECT=false
 
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║                     Powerlevel10k Instant Prompt                     ║
@@ -79,7 +79,6 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
-#export TERM="xterm-256color"
 export BROWSER="chromium"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
