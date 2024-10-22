@@ -149,7 +149,7 @@ $ sudo nvim /etc/xdg/reflector/reflector.conf
 Install Oh My Zsh:
 
 ```sh
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Consider installing the following plugins for Zsh:
