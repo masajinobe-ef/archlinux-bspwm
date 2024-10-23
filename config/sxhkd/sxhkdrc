@@ -99,9 +99,9 @@ super + alt + {q,r}
 alt + {_,shift + }q
 	bspc node -{c,k}
 
-# Split horizontal, vertical or cancel
-alt + {apostrophe,semicolon,slash}
-	bspc node -p {east,south,cancel}
+# # Split horizontal, vertical or cancel
+# alt + {apostrophe,semicolon,slash}
+# 	bspc node -p {east,south,cancel}
 
 # Send the window to another edge of the screen
 alt + {_,shift + }{h,j,k,l}

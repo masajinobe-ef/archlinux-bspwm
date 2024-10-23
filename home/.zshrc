@@ -84,7 +84,7 @@ export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export RUST_BACKTRACE=1
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:/usr/lib/jvm/default/bin:$PATH"
 . "$HOME/.cargo/env"
 
 # ╔══════════════════════════════════════════════════════════════════════╗
